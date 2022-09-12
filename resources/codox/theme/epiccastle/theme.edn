@@ -1,0 +1,22 @@
+{:transforms
+ [[:head]
+  [:append
+   [:link {:rel "stylesheet", :type "text/css" :href "css/dark.css"}]
+   [:link {:rel "stylesheet", :type "text/css" :href "highlight/tomorrow-night.css"}]
+   [:script {:type "text/javascript", :src "highlight/highlight.min.js"}]
+   [:script {:type "text/javascript", :src "js/jquery.min.js"}]
+   [:script {:type "text/javascript", :src "js/page_effects.js"}]
+   [:script "hljs.initHighlightingOnLoad();"]]
+
+  [:#header :h2]
+  [:append
+   " with "
+   [:a {:href "https://github.com/epiccastle/codox-theme-epiccastle"} "epiccastle"]
+   " theme"]]
+
+ :resources
+ ["css/dark.css"
+  "highlight/tomorrow-night.css"
+  "highlight/highlight.min.js"
+  "js/jquery.min.js"
+  "js/page_effects.js"]}
