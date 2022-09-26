@@ -1,11 +1,6 @@
 {:paths ["resources"]
  :aliases
- {:pack {:deps {io.github.juxt/pack.alpha {:git/sha "843475881c5b3ba1a2c9f102f6f5f86f3293a574"}}
-         :exec-fn library
-         :exec-args {:path "target/codox-theme-epiccastle.jar"}
-         :ns-default juxt.pack.cli.api}
-
-   :build
-  {;;:extra-paths ["src"]
-   :deps {io.github.clojure/tools.build {:git/tag "v0.8.3" :git/sha "0d20256"}}
+ {:build
+  {:deps {io.github.clojure/tools.build {:git/tag "v0.8.3" :git/sha "0d20256"}
+          slipset/deps-deploy {:mvn/version "0.2.0"}}
    :ns-default build}}}

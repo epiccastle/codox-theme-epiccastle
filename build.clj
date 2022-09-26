@@ -1,5 +1,6 @@
 (ns build
-  (:require [clojure.tools.build.api :as b]))
+  (:require [clojure.tools.build.api :as b]
+            [deps-deploy.deps-deploy :as deps-deploy]))
 
 (def lib 'io.epiccastle/codox-theme-epiccastle)
 (def version "0.1.0-SNAPSHOT")
@@ -23,3 +24,9 @@
   (b/jar {:class-dir class-dir
           :jar-file jar-file})
   params)
+
+(defn upload [_]
+  (deps-deploy/deploy
+   {:installer :remote
+    :artifact jar-file
+    :pom-file (b/pom-path {:lib lib :class-dir class-dir})}))
